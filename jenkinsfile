@@ -14,6 +14,8 @@ pipeline {
             steps {
                 sh 'echo this is Deploy'
             }
+        }
+    }
             post {
         always{
             echo "This sections runs always"
@@ -28,8 +30,6 @@ pipeline {
     }
     
         }
-    }
-
-}
+    
 
     
