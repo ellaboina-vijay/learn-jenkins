@@ -6,6 +6,7 @@ pipeline {
         stage('Build') { 
             steps {
                 sh 'echo this is Build' 
+                error 'pipeline failed'
             }
         }        
         stage('Test') { 
