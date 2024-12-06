@@ -2,19 +2,25 @@ pipeline {
     agent {
         label 'Agent-1'
     } 
+    options {
+         timeout(time: 10,unit: 'SECONDS')
+    }
     stages {
-        stage('Build') { 
+        stage('Build')
+         { 
             steps {
                 sh 'echo this is Build' 
                
             }
         }        
         stage('Test') { 
+
             steps {
                 sh 'echo this is TEST'
             }
         }
         stage('Deploy') { 
+
             steps {
                 sh 'echo this is Deploy'
                 
@@ -22,9 +28,10 @@ pipeline {
         }
     }
             post {
+
         always{
             echo "This sections runs always"
-            deleteDir()
+            //deleteDir()
         }
         success{
             echo "This section run when pipeline success"
